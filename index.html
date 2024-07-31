@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+
+        #loginForm {
+            display: none;
+        }
+        #invalidMsg {
+            color: red;
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <button onclick="askLocation()" id="bttn">Click to Login</button>
+
+    <div id="invalidMsg">Login Invalid</div>
+
+    <div id="loginForm">
+        <h1>Login Here!</h1>
+        <form>
+            <label for="username">Username:</label>
+            <br>
+            <input type="text" id="username" name="username">
+            <br><br>
+            <label for="password">Password:</label>
+            <br>
+            <input type="password" id="password" name="password">
+            <br><br>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
+    <script>
+        function askLocation() {
+            var location = prompt("Please enter your location:");
+            checkLocation(location);
+        }
+
+        function checkLocation(location) {
+            if (location == "punjab" || locaton == "Punjab" || location == "chandigarh" || location =="Chandigarh" || location == "harayana" || location == "Harayana") {
+                document.getElementById("loginForm").style.display = "block";
+                document.getElementById("invalidMsg").style.display = "none";
+                document.getElementById("bttn").style.display = "none";
+            } else {
+                document.getElementById("invalidMsg").style.display = "block";
+                document.getElementById("loginForm").style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
